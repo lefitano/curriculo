@@ -1,0 +1,331 @@
+/* ============================================
+   RESET E CONFIGURAÇÕES BÁSICAS
+   ============================================ */
+
+/* Remove margens e padding padrão de todos elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Facilita o cálculo de largura/altura */
+}
+
+/* ============================================
+   VARIÁVEIS CSS (CORES DO TEMA DARK)
+   ============================================ */
+
+:root {
+    /* Cores principais do tema dark */
+    --cor-fundo-escuro: #0f0f0f;        /* Preto quase puro para o fundo */
+    --cor-fundo-card: #1a1a1a;          /* Cinza muito escuro para cards */
+    --cor-fundo-card-hover: #252525;    /* Cinza escuro para hover */
+    
+    /* Cores de destaque */
+    --cor-primaria: #f6ab3b;            /* Azul moderno */
+    --cor-primaria-hover: #2563eb;      /* Azul mais escuro para hover */
+    --cor-acento: #f6ab3b;              /* Roxo para detalhes */
+    
+    /* Cores de texto */
+    --cor-texto-principal: #e5e5e5;     /* Branco suave para texto principal */
+    --cor-texto-secundario: #a3a3a3;    /* Cinza médio para texto secundário */
+    --cor-texto-destaque: #ffffff;      /* Branco puro para títulos */
+    
+    /* Bordas e linhas */
+    --cor-borda: #2a2a2a;               /* Cinza escuro para bordas */
+    
+    /* Espaçamentos padrão */
+    --espacamento-pequeno: 0.5rem;      /* 8px */
+    --espacamento-medio: 1rem;          /* 16px */
+    --espacamento-grande: 2rem;         /* 32px */
+    
+    /* Raio de borda para arredondamento */
+    --borda-radius: 12px;
+}
+
+/* ============================================
+   ESTILOS GERAIS DO BODY
+   ============================================ */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-principal);
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+}
+
+/* Container que centraliza e limita a largura do conteúdo */
+.container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto;    /* Centraliza horizontalmente */
+    padding: 0 var(--espacamento-grande);
+}
+
+/* ============================================
+   CABEÇALHO (HEADER)
+   ============================================ */
+
+.header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    padding: var(--espacamento-grande) 0;
+    text-align: center;
+    border-bottom: 2px solid var(--cor-primaria);
+    margin-bottom: var(--espacamento-grande);
+    ;
+}
+
+/* Nome principal no cabeçalho */
+.nome {
+    font-size: 2.5rem;
+    color: var(--cor-texto-destaque);
+    margin-bottom: var(--espacamento-pequeno);
+    font-weight: 700;
+    border-bottom : 2px solid var(--cor-primaria);
+}
+
+/* Título profissional abaixo do nome */
+.titulo-profissional {
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+    margin-bottom: var(--espacamento-grande);
+}
+
+/* Container das informações de contato */
+.contato {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    justify-content: center;
+    gap: var(--espacamento-grande); /* Espaço entre os itens */
+}
+
+/* Cada item de contato individual */
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: var(--espacamento-pequeno);
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+}
+
+/* Ícones SVG dentro dos itens de contato */
+.icon {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    color: var(--cor-primaria);
+}
+
+/* ============================================
+   SEÇÕES (RESUMO, TECNOLOGIAS, PROJETOS)
+   ============================================ */
+
+.secao {
+    margin-bottom: var(--espacamento-grande);
+    padding: var(--espacamento-grande);
+    background-color: var(--cor-fundo-card);
+    border-radius: var(--borda-radius);
+    border: 1px solid var(--cor-borda);
+}
+
+/* Títulos das seções */
+.secao-titulo {
+    font-size: 1.8rem;
+    color: var(--cor-texto-destaque);
+    margin-bottom: var(--espacamento-medio);
+    padding-bottom: var(--espacamento-pequeno);
+    border-bottom: 2px solid var(--cor-primaria);
+}
+
+/* ============================================
+   RESUMO PROFISSIONAL
+   ============================================ */
+
+.resumo-texto {
+    font-size: 1.05rem;
+    color: var(--cor-texto-secundario);
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* ============================================
+   TECNOLOGIAS & CONHECIMENTOS
+   ============================================ */
+
+/* Grid responsivo para os cards de tecnologia */
+.tecnologias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--espacamento-medio);
+}
+
+/* Card individual de tecnologia */
+.tech-card {
+    background-color: var(--cor-fundo-escuro);
+    padding: var(--espacamento-medio);
+    border-radius: var(--borda-radius);
+    border: 1px solid var(--cor-borda);
+    transition: all 0.3s ease; /* Transição suave para o hover */
+}
+
+/* Efeito hover no card de tecnologia */
+.tech-card:hover {
+    transform: translateY(-5px); /* Move o card para cima */
+    border-color: var(--cor-primaria);
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.2);
+}
+
+/* Título da categoria de tecnologia */
+.tech-categoria {
+    color: var(--cor-primaria);
+    font-size: 1.1rem;
+    margin-bottom: var(--espacamento-medio);
+}
+
+/* Lista de tecnologias */
+.tech-lista {
+    list-style: none;
+}
+
+/* Cada item da lista de tecnologias */
+.tech-lista li {
+    color: var(--cor-texto-secundario);
+    padding: var(--espacamento-pequeno) 0;
+    padding-left: var(--espacamento-medio);
+    position: relative;
+}
+
+/* Bullet point personalizado antes de cada item */
+.tech-lista li::before {
+    content: "▹"; /* Símbolo de seta */
+    position: absolute;
+    left: 0;
+    color: var(--cor-primaria);
+    font-weight: bold;
+}
+
+/* ============================================
+   PROJETOS
+   ============================================ */
+
+/* Container dos cards de projeto */
+.projetos-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-medio);
+}
+
+/* Card individual de projeto */
+.projeto-card {
+    background-color: var(--cor-fundo-escuro);
+    padding: var(--espacamento-medio);
+    border-radius: var(--borda-radius);
+    border: 1px solid var(--cor-borda);
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover no card de projeto */
+.projeto-card:hover {
+    transform: translateX(10px); /* Move o card para a direita */
+    border-color: var(--cor-acento);
+    box-shadow: 0 5px 20px rgba(139, 92, 246, 0.2);
+}
+
+/* Cabeçalho do projeto (título + data) */
+.projeto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+/* Título do projeto */
+.projeto-titulo {
+    color: var(--cor-texto-destaque);
+    font-size: 1.3rem;
+}
+
+/* Data do projeto */
+.projeto-data {
+    color: var(--cor-primaria);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Descrição do projeto */
+.projeto-descricao {
+    color: var(--cor-texto-secundario);
+    margin-bottom: var(--espacamento-medio);
+    line-height: 1.6;
+}
+
+/* Container das badges de tecnologia do projeto */
+.projeto-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacamento-pequeno);
+}
+
+/* Badge individual de tecnologia */
+.tech-badge {
+    background-color: var(--cor-fundo-card);
+    color: var(--cor-primaria);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid var(--cor-primaria);
+}
+
+/* ============================================
+   RODAPÉ (FOOTER)
+   ============================================ */
+
+.footer {
+    text-align: center;
+    padding: var(--espacamento-grande) 0;
+    color: var(--cor-texto-secundario);
+    border-top: 1px solid var(--cor-borda);
+    margin-top: var(--espacamento-grande);
+}
+
+/* ============================================
+   RESPONSIVIDADE (MOBILE)
+   ============================================ */
+
+/* Telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    /* Reduz o tamanho do nome no mobile */
+    .nome {
+        font-size: 2rem;
+    }
+    
+    /* Ajusta o título profissional */
+    .titulo-profissional {
+        font-size: 1rem;
+    }
+    
+    /* Empilha os itens de contato verticalmente */
+    .contato {
+        flex-direction: column;
+        gap: var(--espacamento-medio);
+    }
+    
+    /* Reduz padding das seções */
+    .secao {
+        padding: var(--espacamento-medio);
+    }
+    
+    /* Ajusta título das seções */
+    .secao-titulo {
+        font-size: 1.5rem;
+    }
+    
+    /* Grid de tecnologias em coluna única */
+    .tecnologias-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Cabeçalho do projeto empilhado */
+    .projeto-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--espacamento-pequeno);
+    }
+}
